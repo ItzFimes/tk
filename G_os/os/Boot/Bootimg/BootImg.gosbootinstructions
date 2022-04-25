@@ -1,0 +1,13 @@
+{boot
+ from windos.vmos init gos
+GOS.bootimg
+  %if nobootimg "1" }
+	(boottxt "1")
+	(bootimg "0")
+	-bootimg.end}
+-cmd.init
+c=@cmd.python
+c@gos
+c@gos(-crashhandler,img,txt)
+c@exit()
+c@exit			
